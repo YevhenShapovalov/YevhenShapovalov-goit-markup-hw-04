@@ -83,6 +83,13 @@ ul {
   margin-right: 50px;
 }
 /* Contacts */
+.contacts-mail:hover .mail,
+.contacts-mail:focus .mail {
+  fill: var(--active);
+}
+.contacts-phone:hover .phone{
+  fill: var(--active);
+}
 .contacts a {
   color: var(--main-text-color);
   font-weight: 500;
@@ -98,11 +105,9 @@ ul {
 
 .mail {
   display: inline-flex;
-      width: 16px;
-        height: 12px;
         margin-right: 10px;
         
-        fill: #757575;
+        fill: var(--main-text-color);
 }
 .contacts-phone {
   align-items: center;
@@ -115,10 +120,7 @@ ul {
   margin-right: 10px;
   fill: #757575;
 }
-.phone:hover {fill: #2196f3;}
-.mail:hover {
-  fill: #2196f3;
-}
+
 .contacts-mail {
   display: inline-flex;
   align-items: center;
@@ -229,14 +231,14 @@ ul {
 }
 
 /* Наші особливості */
-.antena,
+/* .antena,
 .clock,
 .diagram,
 .astronaut {
   width: 270px;
   height: 120px;
   padding: 25px 100px;
-}
+} */
 .visually-hidden {
   position: absolute;
   white-space: nowrap;
@@ -249,12 +251,43 @@ ul {
   clip-path: inset(50%);
   margin: -1px;
 }
-.features-list :not(:last-child) {
+.antena {
+    background-image: url(../images/antenna-1.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 70px;
+}
+.clock {
+  background-image: url(../images/clock-1.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 70px;
+}
+.diagram {
+    background-image: url(../images/diagram-1.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 70px;
+}
+.astronaut {
+    background-image: url(../images/astronaut-1.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 70px;
+}
+.features-list li {
+  min-width: 270px;
+}
+.features-list li:not(:last-child) {
   margin-right: 30px;
 }
 .features-list {
   display: flex;
-
+}
+.features-list div {
+  text-align: center;
+  height: 120px;
+  margin-bottom: 30px;
 }
 
 .features {
@@ -304,10 +337,14 @@ ul {
 .social svg {
   fill: var(--vector);
 }
-.social svg:hover {
-    fill: #C4C4C4;
+.social:hover svg,
+.social:focus svg {
+  fill: var(--button-text-aktive);
+}
+.social svg:hover,
+.social svg:focus {
+    fill: var(--button-text-aktive);
   }
-.social svg:focus {fill:#C4C4C4;}
 .social:hover,
 .social:focus {
 background-color: #2196f3;}
@@ -315,30 +352,24 @@ background-color: #2196f3;}
 .social-links li:not(:last-child) {margin-right: 10px;}
 
 .social{ 
-  display: block;
+  display: flex;
   border-radius: 50%;
   width: 44px;
-  height: 44px;}
+  height: 44px;
+  justify-content: center;
+  align-items: center;
+}
 .social-links {
   display: flex;
-  justify-content: center
+  justify-content: center;
 }
+
 /* .instagram.social {
 
   border-radius: 50%;
 } */
 .social-links { margin-top: 16px;}
 
-.instagram,
-.twiter,
-.faceboock,
-.linkedin {
-  width: 44px;
-  height: 44px;
-  padding: 12px;
-  
-
-}
 img {
   display: block;
 }
@@ -396,6 +427,7 @@ text-align: center;}
 }
 /* CLIENTS  */
 .clients {
+  padding-top: 94px;
   padding-bottom: 94px;
 }
 .clients-title {
@@ -405,34 +437,52 @@ text-align: center;}
     line-height: 1.17;
     text-align: center;
     letter-spacing: 0.03em;
-    padding-top: 94px;
-    padding-bottom: 50px;
+    margin-bottom: 50px;
 }
 .clients-list li:not(:last-child){
   margin-right: 30px;
 }
 .clients-list a {
-  display: block;
+  display: flex;
   width: 170px;
   height: 92px;
     border-radius: 4px;
       border: 1px solid var(--vector);
+      justify-content: center;
+      align-items: center;
+}
+
+.clients-list a:hover .one,
+.clients-list a:focus .one {
+  fill: var(--active);
+}
+.clients-list a:hover .two,
+.clients-list a:focus .two {
+  fill: var(--active);
+}
+.clients-list a:hover .three,
+.clients-list a:focus .three {
+  fill: var(--active);
+}
+.clients-list a:hover .four,
+.clients-list a:focus .four {
+  fill: var(--active);
+}
+.clients-list a:hover .five,
+.clients-list a:focus .five {
+  fill: var(--active);
+}
+.clients-list a:hover .six,
+.clients-list a:focus .six {
+  fill: var(--active);
 }
 .clients-list a:hover,
 .clients-list a:focus {border-color: var(--active);}
 .clients-list li {
-  /* width: 170px;
-  height: 92px; */
-  /* border-radius: 4px;
-  border: 1px solid var(--vector); */
 }
 .clients-link:hover,
 .clients-link:focus {fill: var(--active);}
-.clients-link {
-  width: 170px;
-  height: 92px;
-  padding: 16px 32px;
-  
+.clients-link {  
   fill: var(--vector);
 
 }
@@ -487,12 +537,14 @@ address a:focus {
 /* social footer  */
 
 .social-link {
-  display: block;
+  display: flex;
   width: 44px;
   height: 44px;
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 50%;
   margin-right: 10px;
+  justify-content: center;
+  align-items: center;
 }
 .social-link:hover,
 .social-link:focus {
@@ -606,6 +658,10 @@ border-right: 1px solid var(--portfolio-box-border);} */
 .portfolio a {
   text-decoration: none;
 }
-.portfolio-item-list:hover {
+.portfolio-item a {
+  display: block;
+}
+.portfolio-item a:hover,
+.portfolio-item a:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
